@@ -64,10 +64,22 @@ float属性具有4个可选项：none、left、right、inherit。其中none为�
 （2）设置了浮动的元素会脱离正常的文档流。设置浮动后，元素会在y轴和z轴上浮动。如，默认情况，父元素的高度会根据子元素的内容
 自动进行调整，而如果子元素设置了浮动，父元素的高度就会变为0.
 （3）虽然浮动元素脱离了文档流，但里面的内容仍会占据空间，并会根据相对位置进行布局。
-##### 2.3.2 清楚浮动
+##### 2.3.2 清除浮动
 清楚浮动主要应用CSS的clear属性，其定义了元素的哪一侧不允许出现浮动元素，可选项有left、right、both.
 (1) 在需要的地方天机定义了clear:both的空标签。
 (2) 对父元素使用:after伪类。
 注意：IE6/7不支持:after伪类，需要添加zoom:1兼容代码。
+### 2.4 CSS定位技术
+CSS使用top、left、right、bottom设置元素的二维（x,y轴）偏移量，使用z-index设置元素垂直于屏幕的方向，z轴的偏移量。
+使用position选项定义元素的定位属性，该属性有5个可选项：static、relative、absolute、fixed、inheirt，默认值是static。
+inferit属性表示继承父元素的定位属性。relative和static都是相对于文档其他元素进行定位，都属于相对定位的范畴，区别是是否可以控制位移。
+#### 2.4.1 相对定位
+1. static 若使用默认值，则再为元素定义top,left,right,botoom,z-index都不会生效。
+2. relative 表现和static一样，不过可以通过设置偏移量和z-index控制其相对于正常位置的偏移。若只写postion:relative，而没有写
+top/left/z-index等值时其情况和默认值是一样的。
+#### 2.4.2 绝对定位
+特点：
+* 块级元素的宽度在未定义时不再为100%，而根据内容自动调整。
+* 
 
 
