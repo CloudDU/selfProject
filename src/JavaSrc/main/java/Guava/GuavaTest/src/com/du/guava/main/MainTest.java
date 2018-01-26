@@ -25,7 +25,6 @@ public class MainTest {
         System.out.println(result2);
         joinTest.test();
         joinTest.testMapJoiner();
-        System.out.println("=========================================================");
         joinTest.testSplit();
     }
 }
