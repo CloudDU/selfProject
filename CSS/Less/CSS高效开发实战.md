@@ -130,5 +130,71 @@ a[src *= "abc"]; 选择其src属性值包含“abc”子串的每个a元素；
 10. 复合选择器 如果说组选择器相当于并集，或者是或(||)，则复合选择器就表示为与(&)。使用"."符号，如
 p.test{color:red}.表示p标签且class为test的元素的文字设置为红色。
 
+#### 3.2 伪类选择器
+伪类表示元素的状态：排序、鼠标是否悬停、是否已被访问过、光标是否指向等。
+CSS2中只有:hover、:active、:visited、:link、:first-child、:lang 等有限的几种伪类选择器。CSS3添加了大量的伪类选择器。
+1. 结构化伪类 即根据文档的结构来选取元素。首先给一样例：
+`<style>
+ul > li
+{
+display:inline-block;
+height:24px;
+line-height:24px;
+width:24px;
+font-size:15px;
+text-align:center;
+background-color:rgb(226,129,129);
+brder-radius:4px;
+margin:5px;
+}
+</style>
+`
+`<ul class="test">`
+`<li>1</li>`
+`<li>2</li>`
+`<li>3</li>`
+`<li>4</li>`
+`<li>5</li>`
+`<li>6</li>`
+`<li>7</li>`
+`<li>8</li>`
+`<li>9</li>`
+`<li>10</li>`
+`</ul>`
+`<div>`
+`<ul class="test_one">`
+`<li>1</li>`
+`<li>2</li>`
+`<li>3</li>`
+`<li>4</li>`
+`<li>5</li>`
+`<li>6</li>`
+`<li>7</li>`
+`<li>8</li>`
+`<li>9</li>`
+`<li>10</li>`
+`<ul>`
+`</div>`
+
+* :nth-child(n) 选择器表示选择某个父元素的第n个X（:之前的符号）元素。如：
+li:nth-child(2){
+background-color:red;
+color:green;
+}
+表示取某个父元素内第2个`<li>`元素，即需要同时满足是第2个元素，且为`<li>`元素。
+如果n没有取指定的值，则表示全选；如果写为2n则表示所有的偶数项。如果设为3n的话，
+则表示取3,6,9项；如果设为2n+1,则表示取所有的奇数项。如果设为n+3,则表示从第3个
+元素开始进行全选。
+* :nth-last-child(n) 类似于nth-child(n)，只是多了last,即是从最后一个元素开始计算。
+* :nth-of-type(n) 类似于nth-child(n),区别是后者，如果是p:nth-child(4),一旦
+第4个元素不是`<p>`元素，则该选择器不起作用。而前者，如果是p:nth-of-type(4),则查询
+的是第4个`<p>`元素。如果:符号前不设置元素，则表示选择所有的元素的第n个元素。
+* :nth-last-of-type(n) 类似于nth-of-type,只是从最后一个元素开始计算。
+* :last-child(n) 表示选择最后一个子元素。
+* :first-of-type 和 :last-of-type. 前者相当于:nth-of-type(1),后者相当于:nth-last-of-type(1)
+* :only-child 表示若一个父元素只有一个子元素，则选择这个子元素。
+* :only-of-type 类似only-child 
+* :root 选择文档的根元素
+* :empty 选择没有任何内容的元素
 
 
