@@ -133,68 +133,82 @@ p.test{color:red}.表示p标签且class为test的元素的文字设置为红色�
 #### 3.2 伪类选择器
 伪类表示元素的状态：排序、鼠标是否悬停、是否已被访问过、光标是否指向等。
 CSS2中只有:hover、:active、:visited、:link、:first-child、:lang 等有限的几种伪类选择器。CSS3添加了大量的伪类选择器。
-1. 结构化伪类 即根据文档的结构来选取元素。首先给一样例：
-`<style>
-ul > li
-{
-display:inline-block;
-height:24px;
-line-height:24px;
-width:24px;
-font-size:15px;
-text-align:center;
-background-color:rgb(226,129,129);
-brder-radius:4px;
-margin:5px;
-}
-</style>
-`
-`<ul class="test">`
-`<li>1</li>`
-`<li>2</li>`
-`<li>3</li>`
-`<li>4</li>`
-`<li>5</li>`
-`<li>6</li>`
-`<li>7</li>`
-`<li>8</li>`
-`<li>9</li>`
-`<li>10</li>`
-`</ul>`
-`<div>`
-`<ul class="test_one">`
-`<li>1</li>`
-`<li>2</li>`
-`<li>3</li>`
-`<li>4</li>`
-`<li>5</li>`
-`<li>6</li>`
-`<li>7</li>`
-`<li>8</li>`
-`<li>9</li>`
-`<li>10</li>`
-`<ul>`
-`</div>`
+1. 结构化伪类 
+    即根据文档的结构来选取元素。首先给一样例：
+    `<style>
+    ul > li
+    {
+    display:inline-block;
+    height:24px;
+    line-height:24px;
+    width:24px;
+    font-size:15px;
+    text-align:center;
+    background-color:rgb(226,129,129);
+    brder-radius:4px;
+    margin:5px;
+    }
+    </style>
+    `
+    `<ul class="test">`
+    `<li>1</li>`
+    `<li>2</li>`
+    `<li>3</li>`
+    `<li>4</li>`
+    `<li>5</li>`
+    `<li>6</li>`
+    `<li>7</li>`
+    `<li>8</li>`
+    `<li>9</li>`
+    `<li>10</li>`
+    `</ul>`
+    `<div>`
+    `<ul class="test_one">`
+    `<li>1</li>`
+    `<li>2</li>`
+    `<li>3</li>`
+    `<li>4</li>`
+    `<li>5</li>`
+    `<li>6</li>`
+    `<li>7</li>`
+    `<li>8</li>`
+    `<li>9</li>`
+    `<li>10</li>`
+    `<ul>`
+    `</div>`
+    
+    * :nth-child(n) 选择器表示选择某个父元素的第n个X（:之前的符号）元素。如：
+    li:nth-child(2){
+    background-color:red;
+    color:green;
+    }
+    表示取某个父元素内第2个`<li>`元素，即需要同时满足是第2个元素，且为`<li>`元素。
+    如果n没有取指定的值，则表示全选；如果写为2n则表示所有的偶数项。如果设为3n的话，
+    则表示取3,6,9项；如果设为2n+1,则表示取所有的奇数项。如果设为n+3,则表示从第3个
+    元素开始进行全选。
+    * :nth-last-child(n) 类似于nth-child(n)，只是多了last,即是从最后一个元素开始计算。
+    * :nth-of-type(n) 类似于nth-child(n),区别是后者，如果是p:nth-child(4),一旦
+    第4个元素不是`<p>`元素，则该选择器不起作用。而前者，如果是p:nth-of-type(4),则查询
+    的是第4个`<p>`元素。如果:符号前不设置元素，则表示选择所有的元素的第n个元素。
+    * :nth-last-of-type(n) 类似于nth-of-type,只是从最后一个元素开始计算。
+    * :last-child(n) 表示选择最后一个子元素。
+    * :first-of-type 和 :last-of-type. 前者相当于:nth-of-type(1),后者相当于:nth-last-of-type(1)
+    * :only-child 表示若一个父元素只有一个子元素，则选择这个子元素。
+    * :only-of-type 类似only-child 
+    * :root 选择文档的根元素
+    * :empty 选择没有任何内容的元素
 
-* :nth-child(n) 选择器表示选择某个父元素的第n个X（:之前的符号）元素。如：
-li:nth-child(2){
-background-color:red;
-color:green;
-}
-表示取某个父元素内第2个`<li>`元素，即需要同时满足是第2个元素，且为`<li>`元素。
-如果n没有取指定的值，则表示全选；如果写为2n则表示所有的偶数项。如果设为3n的话，
-则表示取3,6,9项；如果设为2n+1,则表示取所有的奇数项。如果设为n+3,则表示从第3个
-元素开始进行全选。
-* :nth-last-child(n) 类似于nth-child(n)，只是多了last,即是从最后一个元素开始计算。
-* :nth-of-type(n) 类似于nth-child(n),区别是后者，如果是p:nth-child(4),一旦
-第4个元素不是`<p>`元素，则该选择器不起作用。而前者，如果是p:nth-of-type(4),则查询
-的是第4个`<p>`元素。如果:符号前不设置元素，则表示选择所有的元素的第n个元素。
-* :nth-last-of-type(n) 类似于nth-of-type,只是从最后一个元素开始计算。
-* :last-child(n) 表示选择最后一个子元素。
-* :first-of-type 和 :last-of-type. 前者相当于:nth-of-type(1),后者相当于:nth-last-of-type(1)
-* :only-child 表示若一个父元素只有一个子元素，则选择这个子元素。
-* :only-of-type 类似only-child 
-* :root 选择文档的根元素
-* :empty 选择没有任何内容的元素
+2. 目标伪类 :target
+URL前面有个锚名称#，指向文档内某个具体的元素，称为目标元素。“:target”选择器可用于选取当前活动的目标元素。
 
+3. 状态伪类 但是IE6-8不支持，所以实战中不推荐使用，而是要属性选择器代替实现相同的效果。
+    * :enabled 和 :disabled 表单元素可以设置disabled属性表示禁用，:enabled选择器用于选择所有可用的元素，
+    而:disabled则用于选择所有已禁用的元素。
+    * :checked选择器用于选择所有被选中的checkbox或radio标签
+    * :indeterminate和:default 前者用来指定当页面打开时，某组中的单选框或复选框元素还没有选取状态时的样式；
+    后者用来指定当前元素处于非选取状态的单选框或复选框的样式。【只有Opera浏览器支持，所以不建议使用】
+4. 否定伪类 :not(s) 选择非指定元素的每个元素。
+
+    
+    
 
