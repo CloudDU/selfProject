@@ -209,6 +209,24 @@ URL前面有个锚名称#，指向文档内某个具体的元素，称为目标�
     后者用来指定当前元素处于非选取状态的单选框或复选框的样式。【只有Opera浏览器支持，所以不建议使用】
 4. 否定伪类 :not(s) 选择非指定元素的每个元素。
 
-    
+### 4让字体更炫
+#### 4.1定义字体
+1. font/font-family属性定义传统的字体样式；使用@font-face属性可以加载服务器的字体文件，其语法是：
+    @font-face{
+        font-family:myFont;
+        src:url('Sansation_Light.ttf');
+    }
+    div{
+        font-family:myFont;
+    }
+    @font-face还可以添加字体图标，目前非常流行的字体图标插件Font Awesome。引入相应的CSS和字体文件后，就可以
+    在使用的地方用“<i class='图标类'></i>”进行使用。
+2. box-reflect属性目前只有webkit核心浏览器支持。它可以让文字、图片等具有反射的效果。其语法是：
+    .box-reflect:{<方向><间距><渐变效果>}
+    方向有：above、below、left、right;
+    间距：表示倒影和元素本身之间的额外距离;
+    渐变效果：none:无遮罩图像；<url>：使用绝对或相对地址指定遮罩图像；<linear-gradient>使用线性渐变创建遮罩图像；
+        <radial-gradient>使用径向渐变创建遮罩图像；<repeating-linear-gradient>使用重复的线性渐变创建遮罩图像；
+        <repeating-radial-gradient>使用重复的径向渐变创建遮罩图像。
     
 
