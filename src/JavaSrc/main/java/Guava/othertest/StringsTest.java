@@ -1,4 +1,4 @@
-package Guava.GuavaTest.src.othertest;
+package JavaSrc.main.java.Guava.othertest;
 
 import com.google.common.base.Strings;
 
