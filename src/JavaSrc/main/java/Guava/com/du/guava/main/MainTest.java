@@ -1,7 +1,7 @@
-package Guava.GuavaTest.src.com.du.guava.main;
+package JavaSrc.main.java.Guava.com.du.guava.main;
 
 
-import Guava.GuavaTest.src.joiner.JoinerTest;
+import JavaSrc.main.java.Guava.joiner.JoinerTest;
 
 import java.util.ArrayList;
 import java.util.List;

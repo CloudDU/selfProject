@@ -1,4 +1,4 @@
-package Guava.GuavaTest.src.joiner;
+package JavaSrc.main.java.Guava.joiner;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
