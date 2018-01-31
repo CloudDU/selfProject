@@ -228,5 +228,17 @@ URL前面有个锚名称#，指向文档内某个具体的元素，称为目标�
     渐变效果：none:无遮罩图像；<url>：使用绝对或相对地址指定遮罩图像；<linear-gradient>使用线性渐变创建遮罩图像；
         <radial-gradient>使用径向渐变创建遮罩图像；<repeating-linear-gradient>使用重复的线性渐变创建遮罩图像；
         <repeating-radial-gradient>使用重复的径向渐变创建遮罩图像。
-    
-
+    效果实例见(box-reflect.html)
+3. 字体阴影-光晕、浮雕、投射效果
+    text-shadow:h-shadow v-shadow blur color;一个四个参数，分别是水平偏移量，垂直偏移量，模糊程度和颜色。
+    当偏移量设为0，就可以构建出光晕的效果；当垂直偏移量和水平偏移量设置相同的值就可以构建凸起的浮雕效果，设置不一样
+    则会出现投影的效果。
+4. 字体描边(text-stroke)目前只有webkit核心浏览器支持。实际开发可以通过text-shadow来实现。
+    将每个方向上都添加模糊之为0的阴影即可。
+    text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+5. 字体分栏.CSS3有多列效果，需要以下属性：
+    * column-count:定义分列的数量;
+    * column-gap:定义每一列中间的宽度;
+    * column-rule:定义分栏中间的样式;语法为:样式宽度 样式类型 样式颜色
+    其中样式类型有：none:没有定义规则；hidden:定义隐藏规则；dotted:点状规则；dashed:虚线规则；
+    solid:实线规则；double:双线规则；groove:3Dgrooved规则，取决于宽度和颜色（以下相同）；ridge，inset,outset；
