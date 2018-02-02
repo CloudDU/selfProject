@@ -23,6 +23,32 @@
             text-shadow: 3px 3px 4px #000000;
             font-size:70px;
         }
+        .linear_gradient{
+            width: 300px;
+            background: linear-gradient(90deg, red,orange,yellow,green,blue,indigo,violet);
+        }
+        .radial_gradient222{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(red,orange,yellow,green,blue,indigo,violet);
+        }
+        .radial_gradient22{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(red 15%, green 25%,blue 50%);
+            /*background: -webkit-radial-gradient(buttom left, red 15%, green 25%,blue 50%);*/
+        }
+        .gray_button{
+            background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff),color-stop(100%,#e9e9e9));
+            background: -webkit-linear-gradient(#ffffff,#e9e9e9);
+            background: -moz-linear-gradient(#ffffff,#e9e9e9);
+            background: -o-linear-gradient(#ffffff,#e9e9e9);
+            background: linear-gradient(#ffffff,#e9e9e9);
+            -pie-background:linear-gradient(#ffffff,#e9e9e9);
+
+        }
     </style>
 </head>
 <body>
@@ -30,5 +56,23 @@
     <h2>欢迎 Wolrd!</h2>
     <div class="test-reflect-base">Hello SAIERFU! </div>
     <div class="test-reflect">Hello SAIERFU!</div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="linear_gradient">线性渐变</div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="radial_gradient">放射渐变</div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="radial_gradient2">放射渐变</div>
+    <br/>
+    <br/>
+    <br/>
+    <button class="gray_button">点我</button>
 </body>
 </html>

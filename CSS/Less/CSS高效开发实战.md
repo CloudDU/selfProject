@@ -265,3 +265,17 @@ backgound:hsla(0,100%,100%,1)等同于backgroung:red;其四个参数的解释：
     * 亮度(Light)：取值为0%~100%之间的值。
     * 透明通道(Alpha)：取值为0%~100%之间的值。
 3. 透明颜色 使用opacity属性设置，其值为0~1的值。还可以是inherit。
+4. 线性渐变 background:linear-gradient属性。其3个参数：方向、起始颜色、结束颜色。简单模式只需设定起始颜色和结束颜色，起点，终点和方向
+默认自元素的顶部到底部。如果要设置从左到右，就需要设置linear-gradient(left,red,blue)或者将left换成to right。
+渐变还可以使用角度来表示，0deg,90deg,180deg,270deg分别对应to top,to right, to bottom, to left.还可以设置渐变色为多个颜色，
+例如彩虹（7种颜色）background: linear-gradient(red,orange,yellow,green,blue,indigo,violet);。
+5. 放射渐变 线性渐变是从一个方向向相对方向的色彩渐变效果，而放射渐变则用于表现从中心向外发散的色彩渐变效果。
+使用radial-gradient.其只需要定义颜色即可。background: radial-gradient(red,orange,yellow);默认是按照颜色均匀渐变，
+也可以设置不同颜色所占据的比例,background: radial-gradient(red 5%,orange 15%,yellow 60%);还可以设置渐变中心的位置，
+使用buttom left（未测试），还有其他的一下参数，如形状有circle（圆）和ellipse(椭圆).尺寸如下：
+    * closest-side 指定径向渐变半径长度为从圆心到离圆心最近的边
+    * closest-corner 指定径向渐变的半径长度为从圆心到离圆心最近的角
+    * farther-side 指定径向渐变半径长度为从圆心到离圆心最远的边
+    * farther-corner 指定径向渐变半径长度为从圆心到离圆心最远的角
+    * contain 包含，指定径向渐变半径长度为从圆心到离圆心最近的点
+    * cover 覆盖,指定径向渐变半径长度为从圆心到离圆心最远的点
