@@ -279,3 +279,29 @@ backgound:hsla(0,100%,100%,1)等同于backgroung:red;其四个参数的解释：
     * farther-corner 指定径向渐变半径长度为从圆心到离圆心最远的角
     * contain 包含，指定径向渐变半径长度为从圆心到离圆心最近的点
     * cover 覆盖,指定径向渐变半径长度为从圆心到离圆心最远的点
+### 6 个性边框
+CSS3新增了3种边框(border)属性:border-radius(圆角)、box-shadow(边框阴影)、border-image(图片边框)。
+1. 圆角属性：border-radius其参数可以是具体的整数值，也可以是百分比。还可以设置不同位置的圆角：
+    * border-top-left-radius:20px; 左上角
+    * border-top-right-radius:20px; 右上角
+    * border-bottom-left-radius:20px; 左下角
+    * border-bottom-right-radius:20px; 右下角
+2. 边框阴影：其有一下参数：
+    * h-shadow:必须，水平阴影的位置，允许负值；
+    * v-shadow:必须，垂直阴影的位置，允许负值；
+    * blur:可选，模糊距离；
+    * spread:可选，阴影的尺寸；
+    * color:可选，阴影的颜色；
+    * inset:可选，将外部阴影（outset）改为内部阴影。
+    其参数的组合顺序是：color,水平偏移，垂直偏移，模糊距离，阴影尺寸 inset.
+2.1 内外阴影： 外阴影：box-shadow:0 0 30px 10px; 内阴影：boxshadow:0 0 30px 10px inset;
+2.2 偏移量：box-shadow:10px 10px 30px 10px; 对于外阴影，相当于把阴影从图形的正后方，向右下进行了偏移；
+    box-shadow:10px 10px 30px 10px inset;对于内阴影，相当于图形内部没有被阴影覆盖的部分向右下进行了偏移。
+2.3 阴影尺寸：指的是阴影外延出去总的长度。
+2.4 模糊距离.
+3. 图片边框 实际使用较少。参数：
+    * border-image-source:用在边框的图片的路径。
+    * border-image-slice:图片边框内偏移。
+    * border-image-width:图片边框的宽度。
+    * border-image-outset:边框图像区超出边框的量。
+    * border-image-repeat:图像边框是否应平铺（repeat)、铺满(round)或拉伸(stretch)
