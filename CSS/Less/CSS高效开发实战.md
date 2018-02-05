@@ -305,3 +305,22 @@ CSS3新增了3种边框(border)属性:border-radius(圆角)、box-shadow(边框�
     * border-image-width:图片边框的宽度。
     * border-image-outset:边框图像区超出边框的量。
     * border-image-repeat:图像边框是否应平铺（repeat)、铺满(round)或拉伸(stretch)
+4. resize属性改变输入框大小。其参数有：
+    * none 用户无法调整元素的尺寸；
+    * both 可调整元素的高度和宽度；
+    * horizontal 可调整元素的高度；
+    * vertical 可调整元素的宽度。
+    目前只有webkit核心浏览器支持此属性。
+### 7 变换和动画
+#### 7.1 CSS3的变换类型
+变换（transform）属性主要有两个作用：1构建一些CSS2中难以构造的图形，2配合javaScript制作更丰富的动画。
+1. 旋转边框（rotate）
+    rotate()传入一个角度值作为参数，元素将沿着中轴线顺时针偏转和这个角度值。还可以使用rotateX()和rotateY()
+    分别表示沿着x轴和y轴方向旋转。rotateZ等同于rotate.还可以使用rotate3d(x,y,z,deg)，编辑x,y,z的值构建三维向量，
+    最后一个参数是偏转的角度。
+2. 扭曲变换(skew)
+    skew(xdeg,ydeg)两个参数分别是x轴上的偏转角度和y轴上的偏转角度。
+3. 比例缩放(scale)
+    scale(x,y)两个参数分别是x和y轴上的缩放比例.
+4. 位移变换(translate)
+    translate(x,y)两个参数分别是x和y轴上位移的像素。
