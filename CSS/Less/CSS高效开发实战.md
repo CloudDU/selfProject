@@ -324,3 +324,15 @@ CSS3新增了3种边框(border)属性:border-radius(圆角)、box-shadow(边框�
     scale(x,y)两个参数分别是x和y轴上的缩放比例.
 4. 位移变换(translate)
     translate(x,y)两个参数分别是x和y轴上位移的像素。
+#### 7.2 使用transition制作动画
+使用transition属性可以使元素具有动画效果，transition的值为属性及变化时间。
+如 transition:height 0.6s;表示高度在0.6秒内完成变化。可以设置多个属性。
+其可以包含设置渐进动画的参数，有以下6种:
+    * ease(逐渐变慢)，等同于贝塞尔曲线（0.25,0.1,0.25,1.0）;
+    * linear(匀速),等同于贝塞尔曲线(0.0,0.0,1.0,1.0);
+    * ease-in(加速),等同于贝塞尔曲线(0.42,0,1.0,1.0);
+    * ease-out(减速),等同于贝塞尔曲线(0,0,0.58,1.0);
+    * ease-in-out(加速然后减速),等同于贝塞尔曲线(0.42,0,0.58,1.0);
+    * cubic-bezier:匀速开发者自定义一个时间曲线。
+    开始设置延迟时间。如transition:all .5s ease-in-out 1s;表示全部属性，过度时间为0.5s,
+    过度函数是ease-in-out,延迟时间是1s.
